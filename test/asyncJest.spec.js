@@ -18,3 +18,6 @@ describe('o retorno do telefonema', () => {
     await expect(answerPhone(false)).rejects.toThrow(Error);
   });
 });
+
+/* toThrow: https://jestjs.io/pt-BR/docs/using-matchers
+asynchronous: https://jestjs.io/pt-BR/docs/asynchronous */
