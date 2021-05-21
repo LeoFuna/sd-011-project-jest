@@ -11,7 +11,7 @@ const fetchURL = () => new Promise(function (resolve, reject) {
       userInfo += data;
     });
     res.on('error', reject);
-    res.on('close', () => resolve(JSON.parse(userInfo).results[0]));
+    res.on('close', () => resolve(console.log(JSON.parse(userInfo).results[0])));
   });
 });
 
