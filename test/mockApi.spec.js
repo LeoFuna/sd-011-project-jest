@@ -22,26 +22,24 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+
+
 describe('verifica o usuário', () => {
-  api.fetchURL = jest
-    .fn(() => {
-      const user = {
-        gender: 'male',
-        name: {
-          first: 'Antônio',
-          last: 'Britto',
-        },
-        location: {
-          country: 'Brazil',
-        },
-        email: 'tunico@bol.com.br',
-        login: {
-          username: 'tunicao123',
-          password: '1234567890',
-        },
-      };
-      return user;
-    });
+  api.fetchURL = jest.fn().mockResolvedValue({
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  });
   // .mockReturnValueOnce(user.gender = 'male')
   // .mockReturnValueOnce(user.name.first = 'Antônio')
   // .mockReturnValueOnce(user.name.last = 'Britto')
