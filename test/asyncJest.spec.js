@@ -15,6 +15,7 @@ describe('o retorno do telefonema', () => {
   });
   test('ocupado', async () => {
     const desliga = answerPhone(false);
-    await expect(desliga).rejects.toThrowError('Infelizmente não podemos atender...');
+    await expect(desliga).rejects.toThrowError(/^Infelizmente não podemos atender...$/);
+    // Tales e Rodolfo Rezende me ajudaram nessa!
   });
 });
