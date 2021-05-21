@@ -22,8 +22,28 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockApi');
+
+const requestReturn = {
+  gender: 'male',
+  name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
+  email: 'tunico@bol.com.br',
+  location: {
+    street: { number: 1299, name: 'Rochestown Road' },
+    city: 'Birr',
+    state: 'Wicklow',
+    country: 'Brazil',
+    postcode: 16223,
+    coordinates: { latitude: '26.2451', longitude: '45.2995' },
+  },
+  login: {
+    username: 'tunicao123',
+    password: '1234567890',
+  },
+};
+
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  api.fetchURL = jest.fn().mockResolvedValue(requestReturn);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
