@@ -40,6 +40,8 @@ describe('verifica o usuário', () => {
     },
   });
 
+  // Rodolfo me deu uma dica sobre o objeto.
+
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
