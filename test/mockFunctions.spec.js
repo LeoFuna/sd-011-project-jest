@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -15,7 +16,54 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  test('Testa implementações confiáveis para a função multiply', () => {
+    mockFunctions.multiply.mockImplementation((num1, num2) => num1 * num2);
+    mockFunctions.multiply(2, 1);
+    expect(mockFunctions.multiply).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.multiply(2, 1)).toBe(2);
+  });
+
+  test('Testa implementações confiáveis para a função add', () => {
+    mockFunctions.add.mockImplementation((num1, num2) => num1 + num2);
+    mockFunctions.add(1, 3);
+    expect(mockFunctions.add).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.add(1, 3)).toBe(4);
+  });
+
+  test('Testa implementações confiáveis para a função subtract', () => {
+    mockFunctions.subtract.mockImplementation((num1, num2) => num1 - num2);
+    mockFunctions.subtract(1, 3);
+    expect(mockFunctions.subtract).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.subtract(1, 3)).toBe(-2);
+  });
+
+  test('Testa implementações confiáveis para a função divide', () => {
+    mockFunctions.divide.mockImplementation((num1, num2) => num1 / num2);
+    mockFunctions.divide(3, 1);
+    expect(mockFunctions.divide).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.divide(3, 1)).toBe(3);
+  });
+
+  test('Testa implementações confiáveis para a função power', () => {
+    mockFunctions.power.mockImplementation((num1, num2) => num1 ** num2);
+    mockFunctions.power(2, 3);
+    expect(mockFunctions.power).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.power(2, 3)).toBe(8);
+  });
+
+  test('Testa implementações confiáveis para a função factorial', () => {
+    mockFunctions.factorial.mockImplementation((num) => {
+      let result = num;
+      for (let index = 1; index < num; index += 1) {
+        result *= index;
+      }
+
+      return result;
+    });
+    mockFunctions.factorial(3);
+    expect(mockFunctions.factorial).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.factorial(3)).toBe(6);
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
