@@ -4,7 +4,6 @@ const answerPhone = (answer) =>
     setTimeout(
       answer ? resolve('Oi!') : reject(new Error('Infelizmente não podemos atender...')), 3000,
     );
-    console.log('oi'); // apagar
   });
 
 module.exports = answerPhone;
