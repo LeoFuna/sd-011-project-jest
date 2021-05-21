@@ -1,4 +1,5 @@
 const api = require('../src/mockApi');
+
 jest.mock('../src/mockApi');
 
 /*
@@ -25,28 +26,27 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   const mockUser = {
-      gender: 'male',
-      name: {
-        first: 'Antônio',
-        last: 'Britto',
-      },
-      location: {
-        country: 'Brazil',
-      },
-      email: 'tunico@bol.com.br',
-      login: {
-        username: 'tunicao123',
-        password: '1234567890',
-      }
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
   };
 
   test('verifica se o usuário é o tunico', async () => {
-
     // primeiro jeito usando mockResolvedValue
-    //api.fetchURL = jest.fn().mockResolvedValue(mockUser);
+    // api.fetchURL = jest.fn().mockResolvedValue(mockUser);
 
-    //segundo jeito é usando mockImplementation
-    api.fetchURL.mockImplementation(() => Promise.resolve(mockUser))
+    // segundo jeito é usando mockImplementation
+    api.fetchURL.mockImplementation(() => Promise.resolve(mockUser));
 
     await api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
@@ -57,6 +57,5 @@ describe('verifica o usuário', () => {
       expect(user.login.username).toEqual('tunicao123');
       expect(user.login.password).toEqual('1234567890');
     });
-
   });
 });

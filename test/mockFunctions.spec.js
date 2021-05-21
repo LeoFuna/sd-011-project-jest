@@ -62,7 +62,7 @@ describe('verifica as funções e os mocks', () => {
         return 1;
       }
       for (let i = a - 1; i >= 1; i -= 1) {
-        a = a * i;
+        a *= i;
       }
       return a;
     });
