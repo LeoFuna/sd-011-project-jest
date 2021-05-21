@@ -27,7 +27,7 @@ describe('verifica o usuário', () => {
     gender: 'male',
     name: {
       first: 'Antônio',
-      last: 'Britto'
+      last: 'Britto',
     },
     location: {
       country: 'Brazil',
@@ -37,7 +37,7 @@ describe('verifica o usuário', () => {
       username: 'tunicao123',
       password: '1234567890',
     },
-  }
+  };
 
   api.fetchURL = jest.fn()
     .mockResolvedValue(objectTunico);
