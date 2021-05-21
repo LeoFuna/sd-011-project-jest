@@ -7,7 +7,6 @@ No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a
 Faça um mock da função fetchURL() de forma que,
 independa de chamadas de API e retorne as seguintes informações do Tunico:
 
-
 Note que as informações devem estar de acordo com o JSON
 presente no README.md do projeto.
 
