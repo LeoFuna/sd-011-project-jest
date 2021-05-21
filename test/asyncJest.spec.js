@@ -23,9 +23,6 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    // return answerPhone(false).catch((error) => {
-    //   expect(error).toThrowError('Infelizmente não podemos atender...');
-    // });
     return expect(answerPhone(false)).rejects.toThrowError('Infelizmente não podemos atender...');
   });
 });
