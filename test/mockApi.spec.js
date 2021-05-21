@@ -1,6 +1,6 @@
 const api = require('../src/mockApi');
 
-jest.mock('../src/mockApi')
+jest.mock('../src/mockApi');
 
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
