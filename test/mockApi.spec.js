@@ -50,7 +50,7 @@ describe('verifica o usuário', () => {
       sha256: 'a7bdd079ead0adf21f30cee5b94e5581a9fa0d5fc8b3c1881dbc864dabc55a80',
     },
   };
-  api.fetchURL = jest.fn().mockReturnValue(response);
+  api.fetchURL = jest.fn().mockResolvedValue(response);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
