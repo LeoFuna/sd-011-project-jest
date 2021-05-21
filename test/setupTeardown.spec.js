@@ -20,26 +20,28 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => {
+    const leftOvers = adventure.specialists.map((el) => el.nome);
+    if (leftOvers.length > 1) {
+      return console.log(`Os que restaram são: ${leftOvers}`);
+    }
+    return console.log(`O único sobrevivente é o ${leftOvers}`);
+  });
 
   test('depois da primeira aventura', () => {
-    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
-    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
-    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
-    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
-    adventure.randomAttack();
     expect(adventure.specialists.length).toBe(1);
   });
 });
