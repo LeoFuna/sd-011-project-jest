@@ -53,4 +53,8 @@ describe('verifica o usuário', () => {
       expect(user.login.password).toEqual('1234567890');
     })
   ));
+
+  it('deve ter sido chamado', () => {
+    expect(mockedFetch).toHaveBeenCalled();
+  });
 });
