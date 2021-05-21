@@ -13,10 +13,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     // Insira seu teste assíncrono aqui
-    const asyncTest = await answerPhone(true);
-    expect(asyncTest).toBe('Oi!');
+    const asyncTestTrue = await answerPhone(true);
+    expect(asyncTestTrue).toBe('Oi!');
   });
-  test('ocupado', () => {
+  test('ocupado', async () => {
     // Insira seu teste assíncrono aqui
+    try {
+      await answerPhone(false);
+    } catch (error) {
+      expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
+    }
   });
 });
