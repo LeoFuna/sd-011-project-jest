@@ -3,7 +3,7 @@ const https = require('https');
 
 const url = 'https://randomuser.me/api/';
 
-const fetchURL = () => new Promise(function (resolve, reject) {
+const fetchURL = () => new Promise((resolve, reject) => {
   https.get(url, (res) => {
     res.setEncoding('utf8');
     let userInfo = '';
