@@ -23,11 +23,11 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
   mockFunctions.factorial.mockImplementation((a) => {
-    let fact;
-    for (fact = 1; a > 0; a -= 1) {
-      fact *= a;
+    let factorialNumber;
+    for (factorialNumber = 1; a > 0; a -= 1) {
+      factorialNumber *= a;
     }
-    return fact;
+    return factorialNumber;
   });
 
   test('testa função add', () => {
