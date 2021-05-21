@@ -58,6 +58,8 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('testa função power', () => {
+    mockFunctions.power = jest.fn((a, b) => Math.pow(a, b));
+
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
     expect(mockFunctions.power(5, 5)).toEqual(3125);
@@ -66,6 +68,14 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('testa função factorial', () => {
+    mockFunctions.factorial = jest.fn((a) => {
+      let fact = a;
+      for (let i = 1; i < a; i += 1) {
+        fact *= i;
+      }
+      return fact;
+    })
+
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial(3)).toEqual(6);
