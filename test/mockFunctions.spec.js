@@ -16,7 +16,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 jest.mock('../src/mockFunctions');
 
-
 describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
   mockFunctions.add.mockImplementation((a, b) => a + b);
@@ -24,14 +23,14 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
   mockFunctions.factorial.mockImplementation((a)=>{
-    let factor = a;
+    const factor = a;
     let result = factor;
     const fistMultiply = factor - 1;
     for (let index = fistMultiply; index > 1; index -= 1) {
       result *= index;
     };
     return result;
-  })
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
