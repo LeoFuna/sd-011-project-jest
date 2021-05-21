@@ -23,16 +23,33 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
+  api.fetchURL = jest
+    .fn(() => {
+      const user = {
+        gender: 'male',
+        name: {
+          first: 'Antônio',
+          last: 'Britto',
+        },
+        location: {
+          country: 'Brazil',
+        },
+        email: 'tunico@bol.com.br',
+        login: {
+          username: 'tunicao123',
+          password: '1234567890',
+        },
+      };
+      return user;
+    });
+  // .mockReturnValueOnce(user.gender = 'male')
+  // .mockReturnValueOnce(user.name.first = 'Antônio')
+  // .mockReturnValueOnce(user.name.last = 'Britto')
+  // .mockReturnValueOnce(user.location.country('Brazil'))
+  // .mockReturnValueOnce(user.email = 'tunico@bol.com.br')
+  // .mockReturnValueOnce(user.login.username = 'tunicao123')
+  // .mockReturnValueOnce(user.login.password = '1234567890');
   test('verifica se o usuário é o tunico', async () => (
-    // api.fetchURL = jest
-    // .fn()
-    // .mockReturnValueOnce(user.gender = 'male')
-    // .mockReturnValueOnce(user.name.first = 'Antônio')
-    // .mockReturnValueOnce(user.name.last = 'Britto')
-    // .mockReturnValueOnce(user.location.country('Brazil'))
-    // .mockReturnValueOnce(user.email = 'tunico@bol.com.br')
-    // .mockReturnValueOnce(user.login.username = 'tunicao123')
-    // .mockReturnValueOnce(user.login.password = '1234567890')
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
