@@ -20,8 +20,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  const atack = jest.spyOn(adventure, 'randomAttack')
-  beforeEach(atack)
+  const atack = jest.spyOn(adventure, 'randomAttack');
+  beforeEach(atack);
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
