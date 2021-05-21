@@ -26,7 +26,7 @@ jest.mock('../src/mockApi');
 describe('verifica o usuário', () => {
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
-    name:{
+    name: {
       first: 'Antônio',
       last: 'Britto',
     },
@@ -38,7 +38,7 @@ describe('verifica o usuário', () => {
       username: 'tunicao123',
       password: '1234567890',
     },
-  })
+  });
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
