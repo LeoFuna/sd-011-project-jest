@@ -28,7 +28,7 @@ describe('verifica as funções e os mocks', () => {
     const fistMultiply = factor - 1;
     for (let index = fistMultiply; index > 1; index -= 1) {
       result *= index;
-    }
+    } // Link de referencia 'https://serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript'
     return result;
   });
 
