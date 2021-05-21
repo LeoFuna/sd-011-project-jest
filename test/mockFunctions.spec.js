@@ -16,7 +16,64 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.add(2, 2);
+
+  expect(mockFunctions.add(2, 2)).toBe(4);
+  expect(mockFunctions.add).toHaveBeenCalled();
+  expect(mockFunctions.add).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.add).toHaveBeenCalledWith(2, 2);
+
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.subtract(2, 2);
+
+  expect(mockFunctions.subtract(2, 2)).toBe(0);
+  expect(mockFunctions.subtract).toHaveBeenCalled();
+  expect(mockFunctions.subtract).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.subtract).toHaveBeenCalledWith(2, 2);
+
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  mockFunctions.power(2, 2);
+
+  expect(mockFunctions.power(2, 2)).toBe(4);
+  expect(mockFunctions.power).toHaveBeenCalled();
+  expect(mockFunctions.power).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.power).toHaveBeenCalledWith(2, 2);
+
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.multiply(2, 2);
+
+  expect(mockFunctions.multiply(2, 2)).toBe(4);
+  expect(mockFunctions.multiply).toHaveBeenCalled();
+  expect(mockFunctions.multiply).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.multiply).toHaveBeenCalledWith(2, 2);
+
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.divide(10, 2);
+
+  expect(mockFunctions.divide(10, 2)).toBe(5);
+  expect(mockFunctions.divide).toHaveBeenCalled();
+  expect(mockFunctions.divide).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.divide).toHaveBeenCalledWith(10, 2);
+
+  mockFunctions.factorial.mockImplementation((a, b) => {
+    if (a === 0 || a === 1) {
+      return 1;
+    }
+    for (let index = a - 1; index >= 1; index -= 1) {
+      a *= index;
+    }
+    return a;
+  });
+
+  mockFunctions.factorial(5);
+
+  expect(mockFunctions.factorial(5)).toBe(120);
+  expect(mockFunctions.factorial).toHaveBeenCalled();
+  expect(mockFunctions.factorial).toHaveBeenCalledTimes(2);
+  expect(mockFunctions.factorial).toHaveBeenCalledWith(5);
+
+  //  ___________________________________________________________________
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
