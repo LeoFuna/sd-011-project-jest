@@ -27,10 +27,10 @@ describe('verifica o usuário', () => {
   const requestReturn = {
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
-    location: { country: "Brazil" },
+    location: { country: 'Brazil' },
     email: 'tunico@bol.com.br',
-    login: { username: 'tunicao123', password: '1234567890' }
-  }
+    login: { username: 'tunicao123', password: '1234567890' },
+  };
   api.fetchURL = jest.fn().mockResolvedValue(requestReturn);
   /* feito baseado na parte Mock e funções assíncronas do course */
   test('verifica se o usuário é o tunico', async () => (
