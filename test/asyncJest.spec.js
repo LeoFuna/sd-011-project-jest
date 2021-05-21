@@ -15,10 +15,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', () => {
     /* assert.fail(); */
-    expect(answerPhone(true)).resolves.toEqual('Oi');
+    expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', () => {
     /* assert.fail(); */
-    expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
+    expect(answerPhone(false)).rejects.toEqual(Error('Infelizmente não podemos atender...'));
   });
 });
