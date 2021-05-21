@@ -27,7 +27,7 @@ describe('verifica o usuário', () => {
   const userTest = {
     gender: 'male',
     name: {
-      firt: 'Antônio',
+      first: 'Antônio',
       last: 'Britto',
     },
     location: {
