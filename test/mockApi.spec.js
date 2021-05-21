@@ -21,7 +21,7 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// prettier-ignore
 describe('verifica o usuário', () => {
   api.fetchURL = jest.fn().mockImplementation(() =>
     Promise.resolve({
@@ -30,8 +30,7 @@ describe('verifica o usuário', () => {
       location: { country: 'Brazil' },
       email: 'tunico@bol.com.br',
       login: { username: 'tunicao123', password: '1234567890' },
-    }),
-  );
+    }));
 
   // Crie sua mock da função fetchURL() aqui
 
