@@ -21,21 +21,25 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   beforeEach(() => adventure.randomAttack());
-  afterEach(() => {
+
+  const fillAdventurers = () => {
     let aventureiros = '';
 
     for (let index = 0; index < adventure.specialists.length; index += 1) {
       if (index !== (adventure.specialists.length - 1)) {
         aventureiros += (`${adventure.specialists[index].nome}, `);
-      } else {
-        aventureiros += (`${adventure.specialists[index].nome}`);
-      };
-    };
+      } else aventureiros += (`${adventure.specialists[index].nome}`);
+    }
 
-    if (adventure.specialists.length !== 1)
+    return aventureiros;
+  };
+
+  afterEach(() => {
+    const aventureiros = fillAdventurers();
+
+    if (adventure.specialists.length !== 1) {
       console.log(`Aventureiros restantes: ${aventureiros}`);
-    else
-      console.log(`Aventureiro sobrevivente: ${adventure.specialists[0].nome}`);
+    } else console.log(`Aventureiro sobrevivente: ${adventure.specialists[0].nome}`);
   });
 
   test('depois da primeira aventura', () => {
