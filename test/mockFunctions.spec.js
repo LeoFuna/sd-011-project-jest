@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+
 jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
@@ -16,7 +17,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   test('Implementação correta da função add', () => {
-
     mockFunctions.add.mockImplementation((a, b) => a + b);
     mockFunctions.add(32, 45);
 
@@ -27,7 +27,6 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('Implementação correta da função subtract', () => {
-
     mockFunctions.subtract.mockImplementation((a, b) => a - b);
     mockFunctions.subtract(67, 35);
 
@@ -38,7 +37,6 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('Implementação correta da função multiply', () => {
-
     mockFunctions.multiply.mockImplementation((a, b) => a * b);
     mockFunctions.multiply(25, 5);
 
@@ -49,7 +47,6 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('Implementação correta da função divide', () => {
-
     mockFunctions.divide.mockImplementation((a, b) => a / b);
     mockFunctions.divide(20, 4);
 
@@ -60,7 +57,6 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('Implementação correta da função power', () => {
-
     mockFunctions.power.mockImplementation((a, b) => a ** b);
     mockFunctions.power(13, 2);
 
@@ -71,13 +67,12 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('Implementação correta da função factorial', () => {
-
     mockFunctions.factorial.mockImplementation((a) => {
       if (a === 0 || a === 1) {
         return 1;
       }
       for (let index = a - 1; index >= 1; index -= 1) {
-        a = a * index;
+        a *= index;
       }
       return a;
     });
