@@ -1,18 +1,18 @@
 const api = require('../src/mockApi');
 
-const user = {
+const users = {
   gender: 'male',
   name: {
     first: 'Antônio',
-    last: 'Britto'
+    last: 'Britto',
   },
   location: {
-    country: 'Brazil'
+    country: 'Brazil',
   },
   email: 'tunico@bol.com.br',
   login: {
     username: 'tunicao123',
-    password: '1234567890'
+    password: '1234567890',
   },
 };
 /*
@@ -38,8 +38,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  const apiURL = jest.spyOn(api, "fetchURL").mockResolvedValue(user);
-  
+  const apiURL = jest.spyOn(api, 'fetchURL').mockResolvedValue(users);
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
