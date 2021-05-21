@@ -31,11 +31,7 @@ describe('verifica as funções e os mocks', () => {
     .mockImplementation((a, b) => a ** b);
 
   const factorial = jest.spyOn(mockFunctions, 'factorial')
-    .mockImplementation((num) => {
-      if (num < 0) return -1;
-      if (num === 0 || num === 1) return 1;
-      return (num * factorial(num - 1));
-    });
+    .mockImplementation((num) => ((num !== 1) ? num * factorial(num - 1) : 1));
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
