@@ -20,6 +20,12 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply.mockImplementation((num1, num2) => num1 * num2);
   mockFunctions.divide.mockImplementation((num1, num2) => num1 / num2);
   mockFunctions.power.mockImplementation((num1, num2) => num1 ** num2);
+  mockFunctions.factorial.mockImplementation((num) => {
+    let result = num;
+    for (let i = 1; i < num; i += 1) {
+      result *= i;
+    } return result;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
