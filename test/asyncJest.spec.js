@@ -11,8 +11,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => expect(answerPhone(true)).resolves.toBe('Oi!'));
-  test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toEqual(new Error('Infelizmente não podemos atender...'));
+  test('atende', async () => {
+    await expect(answerPhone(true)).resolves.toBe('Oi!');
+  });
+  test('ocupado', async () => {
+    // expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
+    await expect(answerPhone(false)).rejects
+      .toThrow(new Error('Infelizmente não podemos atender...'));
   });
 });
+
+// Amigos me lembraram de usar o async e await. (Eu tinha esquecido).
