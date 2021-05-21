@@ -30,7 +30,7 @@ const usuario = {
   login: { username: 'tunicao123', password: '1234567890' },
 };
 
-describe('verifica o usuário', () => {  
+describe('verifica o usuário', () => {
   api.fetchURL = jest.fn().mockResolvedValue(usuario);
 
   test('verifica se o usuário é o tunico', async () => (
