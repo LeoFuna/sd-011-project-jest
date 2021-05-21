@@ -1,5 +1,5 @@
-// const assert = require('assert');
-// const { resolve } = require('path');
+const assert = require('assert');
+const { resolve } = require('path');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
