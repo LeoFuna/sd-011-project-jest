@@ -33,7 +33,7 @@ const users = {
 };
 
 describe('verifica o usuário', () => {
-  api.fetchURL = jest.spyOn(api, 'fetchURL').mockResolved(users);
+  api.fetchURL = jest.spyOn(api, 'fetchURL').mockResolvedValue(users);
 
   test('verifica se o usuário é o tunico', async () => {
     expect.assertions(7);
