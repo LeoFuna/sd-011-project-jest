@@ -22,9 +22,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  randomSpecialistIndex = jest.fn().mockReturnValueOnce(0)
+  const randomSpecialistIndex = jest.fn().mockReturnValueOnce(0);
 
-  beforeEach(() => adventure.randomAttack())
+  beforeEach(() => adventure.randomAttack());
   afterEach(() => console.log(adventure.specialists));
 
   test('depois da primeira aventura', () => {
