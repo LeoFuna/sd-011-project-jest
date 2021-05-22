@@ -14,6 +14,7 @@ describe('o retorno do telefonema', () => {
   test('atende', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
+    expect.assertions(1);
     answerPhone(true).then((data) => {
       expect(data).toBe('Oi!');
     });
@@ -22,6 +23,7 @@ describe('o retorno do telefonema', () => {
   test('ocupado', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
+    // expect.assertions(1);
     answerPhone(false).then((data) => {
       expect(data).toThrow(new Error('Infelizmente não podemos atender...'));
     });
