@@ -21,7 +21,9 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// =======================================================================>
+// => Essa forma ela cria a Mock function usando uma promise
+// =======================================================================>
 describe('verifica o usuário', () => {
   api.fetchURL = jest.fn().mockImplementation(() => new Promise((resolve) => {
     const user = {
@@ -46,7 +48,9 @@ describe('verifica o usuário', () => {
     })
   ));
 });
-
+// ======================================================================>
+// => Essa forma ela cria a Mock function asyncrona
+// =======================================================================>
 // describe('verifica o usuário', () => {
 //   api.fetchURL = jest.fn().mockImplementation(async () => {
 //     const user = {
@@ -58,7 +62,6 @@ describe('verifica o usuário', () => {
 //     };
 //     return (user);
 //   });
-
 //   test('verifica se o usuário é o tunico', async () => (
 //     api.fetchURL().then((user) => {
 //       expect(user.gender).toEqual('male');
