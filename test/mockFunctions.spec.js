@@ -16,6 +16,12 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// Requisito realizado com base nos sites:
+// https://serprogramador.com.br/artigos/topico/javascript/...
+// ...Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+// https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockimplementationfn
+
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
   add.mockImplementation((a, b) => a + b);
@@ -26,19 +32,17 @@ describe('verifica as funções e os mocks', () => {
     let pow = a;
     for (let i = 0; i <= b; i += 1) {
       // pow = multiply(pow, b);
-      pow = Math.pow(a, b);
+      pow = (a ** b);
     }
     return pow;
   });
-  factorial.mockImplementation ((a) => {
+  factorial.mockImplementation((a) => {
     let fact = a;
     for (let i = 1; i < a; i += 1) {
-      fact = fact * i;
+      fact *= i;
     }
     return fact;
   });
-  
-
 
   test('testa função add', () => {
     expect(add(1, 2)).toEqual(3);
