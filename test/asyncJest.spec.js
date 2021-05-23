@@ -1,5 +1,4 @@
-const { rejects } = require('assert');
-const assert = require('assert');
+// const { rejects } = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
