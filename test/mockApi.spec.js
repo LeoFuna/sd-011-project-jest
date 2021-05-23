@@ -1,7 +1,7 @@
 const api = require('../src/mockApi');
 
-// jest.mock('../src/mockApi'); Uso o jest.mock('../src/mockApi') quando quero simular 
-// várias funções no arquivo linkado('../src/mockApi'). Portato se eu quiser fazer simulação pra uma função só é melhor colocar 
+// jest.mock('../src/mockApi'); Uso o jest.mock('../src/mockApi') quando quero simular
+// várias funções no arquivo linkado('../src/mockApi'). Portato se eu quiser fazer simulação pra uma função só é melhor colocar
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
 No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a resposta contenha as informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
@@ -31,11 +31,11 @@ describe('verifica o usuário', () => {
     email: 'tunico@bol.com.br',
     login: { username: 'tunicao123', password: '1234567890' },
   };
-  
-  const spy = jest.spyOn(api,"fetchURL");
+
+  const spy = jest.spyOn(api, 'fetchURL');
   // api.fetchURL = jest.fn();
   api.fetchURL.mockResolvedValue(trybeAdmin);
-  
+
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
