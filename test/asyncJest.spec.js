@@ -1,4 +1,3 @@
-const assert = require('assert');
 const { hasUncaughtExceptionCaptureCallback } = require('process');
 const answerPhone = require('../src/asyncJest');
 /*
@@ -15,13 +14,28 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
     expect.assertions(1);
     const response = answerPhone(true);
-    return expect(response).resolves.toBe('Oi!');
+    await expect(response).resolves.toBe('Oi!');
   });
+
   test('ocupado', async () => {
     expect.assertions(1);
     const response = answerPhone(false);
-    return expect(response).rejects.toThrowError('Infelizmente não podemos atender...');
+    await expect(response).rejects.toThrowError('Infelizmente não podemos atender...');
   });
+
+  //   test('atende', async () => {
+  //     expect.assertions(1);
+  //     const response = await answerPhone(true);
+  //     return expect(response).toBe('Oi!');
+  //   });
+
+//   test('oucpado com o try catch', async () => {
+//     try {
+//       await answerPhone(false);
+//     } catch (error) {
+//       expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
+//     }
+//   });
 });
 
 describe('o retorno do telefonema', () => {
