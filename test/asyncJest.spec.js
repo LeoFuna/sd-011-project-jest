@@ -11,10 +11,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   it('atende', () => {
-    expect(answerPhone(true)).resolves.toBe('Oi!');
+    return expect(answerPhone(true)).resolves.toBe('Oi!');
   });
 
   it('ocupado', () => {
-    expect(answerPhone(false)).rejects.toThrowError('Infelizmente não podemos atender...');
+    return expect(answerPhone(false)).rejects.toThrowError('Infelizmente não podemos atender...');
   });
 });
