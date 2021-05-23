@@ -23,7 +23,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-
   api.fetchURL = jest.fn(() => Promise.resolve({
     gender: 'male',
     name: {
@@ -38,7 +37,7 @@ describe('verifica o usuário', () => {
       username: 'tunicao123',
       password: '1234567890',
     },
-  }))
+  }));
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
