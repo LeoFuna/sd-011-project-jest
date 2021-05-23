@@ -1,3 +1,4 @@
+const { rejects } = require('assert');
 const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
@@ -10,13 +11,16 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('o retorno do telefonema', () => {
+// Requisito realizado com base nos sites:
+// https://jestjs.io/pt-BR/docs/tutorial-async
+// https://jestjs.io/pt-BR/docs/asynchronous
+// https://www.youtube.com/watch?v=sLx00kXPoTg
+
+describe('Testa se linha atende ou está ocupada', () => {
   test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
