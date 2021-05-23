@@ -17,6 +17,6 @@ describe('o retorno do telefonema', () => {
   });
   test('ocupado', async () => {
     // assert.fail();
-    await expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos antender...');
+    await expect(answerPhone()).rejects.toBe(new Error('Infelizmente não podemos antender...'));
   });
 });
