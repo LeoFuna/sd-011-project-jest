@@ -14,12 +14,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // https://jestjs.io/pt-BR/docs/tutorial-async
 // https://jestjs.io/pt-BR/docs/asynchronous
 // https://www.youtube.com/watch?v=sLx00kXPoTg
+// https://stackoverflow.com/questions/59747420/expect-a-function-to-throw-an-exception-in-jest
 
 describe('Testa se linha atende ou está ocupada', () => {
   test('atende', () => {
     expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
+    expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
   });
 });
