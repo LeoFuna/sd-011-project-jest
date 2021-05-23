@@ -26,7 +26,10 @@ describe('quem sobreviveu?', () => {
   });
 
   afterEach(() => {
-    console.log(adventure.specialists);
+    const remainingPlayers = [];
+    adventure.specialists.forEach((player) => remainingPlayers.push(player.nome));
+    const restantes = remainingPlayers.toString();
+    console.log(`Jogadores restantes: ${restantes}`);
   });
 
   test('depois da primeira aventura', () => {
