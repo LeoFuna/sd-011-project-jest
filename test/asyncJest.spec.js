@@ -20,6 +20,6 @@ describe('Testa se linha atende ou está ocupada', () => {
     expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toBe("Infelizmente não podemos atender...");
+    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
