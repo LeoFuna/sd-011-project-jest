@@ -1,5 +1,4 @@
 const api = require('../src/mockApi');
-const fetch = require('../src/mockApi');
 
 jest.mock('../src/mockApi');
 
@@ -26,7 +25,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  fetchURL = jest.fn();
+  api.fetchURL = jest.fn();
 
   const tunico = {
     gender: 'male',
@@ -44,10 +43,10 @@ describe('verifica o usuário', () => {
     },
   };
 
-  fetchURL.mockResolvedValue(tunico)
+  api.fetchURL.mockResolvedValue(tunico);
 
   test('verifica se o usuário é o tunico', async () => (
-    fetchURL().then((user) => {
+    api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
