@@ -23,11 +23,12 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
   beforeEach(() => {
     adventure.randomAttack();
-  })
+  });
 
   afterEach(() => {
-    adventure.specialists.map((specialist) => console.log(`Ainda seguem lutando bravamente ${specialist.nome}`));
-  })
+    adventure.specialists
+      .map((specialist) => console.log(`Ainda seguem lutando bravamente ${specialist.nome}`));
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
