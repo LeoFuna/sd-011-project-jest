@@ -26,7 +26,7 @@ describe('verifica as funções e os mocks', () => {
       fact *= index;
     }
     return fact;
-  })
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
