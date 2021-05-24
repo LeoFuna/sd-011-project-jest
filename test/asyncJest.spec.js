@@ -13,11 +13,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
+  /** A asserção abaixo é responsável por verificar se o retorno da função é Oi */
   test('atende', () => {
     expect.assertions(1);
     expect(answerPhone(true)).resolves.toBe('Oi!');
   });
 
+  /** A asserção abaixo é responsável por verificar a mensagem de erro */
   test('ocupado', () => {
     expect.assertions(1);
     expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));

@@ -19,12 +19,13 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+/** Para resolução deste requisito, foi usado beforeEach, que é responsável por executar
+ * vários testes sem necessidade de repetição de comandos. Especificando a função, junta-
+ * mente com o beforeEach. Todos os testes serão executados. */
 describe('quem sobreviveu?', () => {
   beforeEach(() => {
     adventure.randomAttack();
-  })
-  
-
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });

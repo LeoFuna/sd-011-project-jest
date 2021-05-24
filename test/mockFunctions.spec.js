@@ -17,6 +17,11 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+/** Neste requisito foi usado em todos os testes, uma matcher do Jest chamado
+ * mockImplementation, que é responsável por alterar o comportamente padrão
+ * de uma função. Ou seja, se uma certa função soma, podemos alterar o seu
+ * comportamento para sobtrair. Nos casos abaixos, todas as funções originais
+ * estão erradas. */
 describe('verifica as funções e os mocks', () => {
   test('testa função add', () => {
     mockFunctions.add.mockImplementation((a, b) => a + b); /** A alteração usando mockImplementation */
@@ -65,10 +70,9 @@ describe('verifica as funções e os mocks', () => {
   });
 
   /** Para resolver este requisito, consulsei uma ótima explicação sobre fatorial
-   * e usei um trecho de código que está entre as linhas 73 e 79 para resolver
+   * e usei um trecho de código que está entre as linhas 79 e 83 para resolver
    * este teste do requisito!
-   * Source: serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript
-  */
+   * Source: https://www.serprogramador.com.br/artigos/topico/javascript/Como-calcular-a-operacao-matematica-de-fatorial-com-JavaScript */
   test('testa função factorial', () => {
     mockFunctions.factorial.mockImplementation((a) => {
       let resultado = 1;

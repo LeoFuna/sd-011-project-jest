@@ -24,12 +24,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   /** Para resolver este requisito, consultei alguns Pull Requests de pessoas que já haviam
-   * terminado o projeto na data de divulgação. Assim, pude verificar o que seria feiro para 
+   * terminado o projeto na data de divulgação. Assim, pude verificar o que seria feito para
    * fazer a asserção de forma correta.
-   * Eu deveria deixar um objeto pré-determinado, para assim, fazer as asserções no teste()
-   * que começa na linha 48; 
+   * Eu deveria deixar um objeto pré-determinado, para assim, fazer as asserções no test()
+   * que começa na linha 49;
    */
-  
+  /** Foi utilizado .mockResolvedValue, para que possamos "forçar" o retorno de uma
+   * função mockada, para algo de nosso interesse. */
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
     name: {
@@ -44,8 +45,7 @@ describe('verifica o usuário', () => {
       username: 'tunicao123',
       password: '1234567890',
     },
-  })
-
+  });
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
