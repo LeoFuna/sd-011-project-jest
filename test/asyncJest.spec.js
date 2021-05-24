@@ -17,5 +17,5 @@ describe('o retorno do telefonema', () => {
 });
 test('ocupado', async () => {
   // eslint-disable-next-line max-len
-  await expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
+  await expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
 });
