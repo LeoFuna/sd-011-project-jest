@@ -11,12 +11,17 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
+  test('atende', async () => {    
     // Insira seu teste assíncrono aqui
+    const atende = await answerPhone(true);    
+    expect(atende).toBe('Oi!');
   });
-  test('ocupado', () => {
-    assert.fail();
+  test('ocupado', async () => {    
     // Insira seu teste assíncrono aqui
+    try {
+      await answerPhone(true);
+    } catch (error) {
+      await expect(error).toThrow(new Error ('Infelizmente não podemos atender...'));
+    }
   });
 });
