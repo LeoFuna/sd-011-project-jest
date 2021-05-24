@@ -23,7 +23,28 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  /** Para resolver este requisito, consultei alguns Pull Requests de pessoas que já haviam
+   * terminado o projeto na data de divulgação. Assim, pude verificar o que seria feiro para 
+   * fazer a asserção de forma correta.
+   * Eu deveria deixar um objeto pré-determinado, para assim, fazer as asserções no teste()
+   * que começa na linha 48; 
+   */
+  
+  api.fetchURL = jest.fn().mockResolvedValue({
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  })
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
