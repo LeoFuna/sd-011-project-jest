@@ -40,15 +40,12 @@ describe('verifica o usuário', () => {
       password: '1234567890',
     },
   };
-
+    // usando mockImplementation
+  api.fetchURL.mockImplementation(() => Promise.resolve(mockUser));
   test('verifica se o usuário é o tunico', async () => {
-    // primeiro jeito usando mockResolvedValue
+    // usando mockResolvedValue
     // api.fetchURL = jest.fn().mockResolvedValue(mockUser);
-
-    // segundo jeito é usando mockImplementation
-    api.fetchURL.mockImplementation(() => Promise.resolve(mockUser));
-
-    await api.fetchURL().then((user) => {
+      await api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
