@@ -20,7 +20,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-
   // Será executado para cada teste dentro deste bloco "describe"
   beforeEach(() => {
     adventure.randomAttack();
