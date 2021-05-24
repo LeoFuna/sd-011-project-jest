@@ -71,6 +71,7 @@ R:
 4 - Crie funções no arquivo test/setupTeardown.spec.js
 Intercale funções entre os testes definidos no arquivo test/setupTeardown.spec.js.
 
-R: 
+R: Os testes já estavam prontos, eu apenas passei uma function beforeEach(), que tem uma callback que retorna a function randomAttack(), isso é necessário pois depois do primeiro ataque o array specialist fica defasado, gerando erro no teste subsequente 
+--> beforeEach(): Executa uma função antes que cada um dos testes neste arquivo seja executado. Se a função retornar uma promessa ou for um gerador, Jest espera que a promessa seja resolvida antes de executar o teste.
 
-------------------------------< THE END >----------------------------------
+------------------------------< THE END >--------------------------------
