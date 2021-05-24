@@ -19,12 +19,12 @@ describe('verifica as funções e os mocks', () => {
 
   test('testa função add', () => {
     mockFunctions.add = jest
-    .fn()
-    .mockReturnValueOnce(3)
-    .mockReturnValueOnce(45)
-    .mockReturnValueOnce(14)
-    .mockReturnValueOnce(-175)
-    .mockReturnValueOnce(33);
+      .fn()
+      .mockReturnValueOnce(3)
+      .mockReturnValueOnce(45)
+      .mockReturnValueOnce(14)
+      .mockReturnValueOnce(-175)
+      .mockReturnValueOnce(33);
 
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add).toHaveBeenCalledTimes(1);
@@ -39,17 +39,17 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add).toHaveBeenCalledTimes(4);
 
     expect(mockFunctions.add(7, 26)).toEqual(33);
-    expect(mockFunctions.add).toHaveBeenCalledTimes(5);    
+    expect(mockFunctions.add).toHaveBeenCalledTimes(5);
   });
 
   test('testa função subtract', () => {
     mockFunctions.subtract = jest
-    .fn()
-    .mockReturnValueOnce(864)
-    .mockReturnValueOnce(-350)
-    .mockReturnValueOnce(-52)
-    .mockReturnValueOnce(131)
-    .mockReturnValueOnce(-104)
+      .fn()
+      .mockReturnValueOnce(864)
+      .mockReturnValueOnce(-350)
+      .mockReturnValueOnce(-52)
+      .mockReturnValueOnce(131)
+      .mockReturnValueOnce(-104);
 
     expect(mockFunctions.subtract(899, 35)).toEqual(864);
     expect(mockFunctions.subtract).toHaveBeenCalledTimes(1);
@@ -69,12 +69,12 @@ describe('verifica as funções e os mocks', () => {
 
   test('testa função multiply', () => {
     mockFunctions.multiply = jest
-    .fn()
-    .mockReturnValueOnce(2)
-    .mockReturnValueOnce(0)
-    .mockReturnValueOnce(-36)
-    .mockReturnValueOnce(84)
-    .mockReturnValueOnce(437)
+      .fn()
+      .mockReturnValueOnce(2)
+      .mockReturnValueOnce(0)
+      .mockReturnValueOnce(-36)
+      .mockReturnValueOnce(84)
+      .mockReturnValueOnce(437);
 
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
     expect(mockFunctions.multiply).toHaveBeenCalledTimes(1);
@@ -94,75 +94,75 @@ describe('verifica as funções e os mocks', () => {
 
   test('testa função divide', () => {
     mockFunctions.divide = jest
-    .fn()
-    .mockReturnValueOnce(13)
-    .mockReturnValueOnce(-380)
-    .mockReturnValueOnce(6)
-    .mockReturnValueOnce(3)
-    .mockReturnValueOnce(121)
+      .fn()
+      .mockReturnValueOnce(13)
+      .mockReturnValueOnce(-380)
+      .mockReturnValueOnce(6)
+      .mockReturnValueOnce(3)
+      .mockReturnValueOnce(121);
 
     expect(mockFunctions.divide(169, 13)).toEqual(13);
     expect(mockFunctions.divide).toHaveBeenCalledTimes(1);
 
     expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
     expect(mockFunctions.divide).toHaveBeenCalledTimes(2);
-    
+
     expect(mockFunctions.divide(42, 7)).toEqual(6);
     expect(mockFunctions.divide).toHaveBeenCalledTimes(3);
-    
+
     expect(mockFunctions.divide(729, 243)).toEqual(3);
     expect(mockFunctions.divide).toHaveBeenCalledTimes(4);
-    
+
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
     expect(mockFunctions.divide).toHaveBeenCalledTimes(5);
   });
 
   test('testa função power', () => {
     mockFunctions.power = jest
-    .fn()
-    .mockReturnValueOnce(100)
-    .mockReturnValueOnce(1024)
-    .mockReturnValueOnce(3125)
-    .mockReturnValueOnce(1)
-    .mockReturnValueOnce(1)
+      .fn()
+      .mockReturnValueOnce(100)
+      .mockReturnValueOnce(1024)
+      .mockReturnValueOnce(3125)
+      .mockReturnValueOnce(1)
+      .mockReturnValueOnce(1);
 
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power).toHaveBeenCalledTimes(1);
 
     expect(mockFunctions.power(2, 10)).toEqual(1024);
     expect(mockFunctions.power).toHaveBeenCalledTimes(2);
-    
+
     expect(mockFunctions.power(5, 5)).toEqual(3125);
     expect(mockFunctions.power).toHaveBeenCalledTimes(3);
-    
+
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power).toHaveBeenCalledTimes(4);
-    
+
     expect(mockFunctions.power(0, 0)).toEqual(1);
     expect(mockFunctions.power).toHaveBeenCalledTimes(5);
   });
 
   test('testa função factorial', () => {
     mockFunctions.factorial = jest
-    .fn()
-    .mockReturnValueOnce(120)
-    .mockReturnValueOnce(3628800)
-    .mockReturnValueOnce(6)
-    .mockReturnValueOnce(40320)
-    .mockReturnValueOnce(2)
+      .fn()
+      .mockReturnValueOnce(120)
+      .mockReturnValueOnce(3628800)
+      .mockReturnValueOnce(6)
+      .mockReturnValueOnce(40320)
+      .mockReturnValueOnce(2);
 
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial).toHaveBeenCalledTimes(1);
 
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial).toHaveBeenCalledTimes(2);
-    
+
     expect(mockFunctions.factorial(3)).toEqual(6);
     expect(mockFunctions.factorial).toHaveBeenCalledTimes(3);
-    
+
     expect(mockFunctions.factorial(8)).toEqual(40320);
     expect(mockFunctions.factorial).toHaveBeenCalledTimes(4);
-    
+
     expect(mockFunctions.factorial(2)).toEqual(2);
     expect(mockFunctions.factorial).toHaveBeenCalledTimes(5);
   });
