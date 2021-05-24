@@ -23,5 +23,6 @@ describe('o retorno do telefonema', () => {
 
 /**
  * Consultei o repositório de Diego Ribeiro, para resolver o primeiro test, e descobri que o que estava faltando na minha resolução era o resolves...
+ * Porém lendo o conteúdo do course descobri a resolução pelo conteúdo das promises
  * Link: https://github.com/tryber/sd-011-project-jest/pull/12/commits/92ff56d8307ca5f27151a68f80e474e4cd0e41b7
  */
