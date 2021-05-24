@@ -208,6 +208,8 @@ Exemplo de resposta da API randomuser.me:
 
 ### 4 - Crie funções no arquivo test/setupTeardown.spec.js
 
+
+
 Intercale funções entre os testes definidos no arquivo `test/setupTeardown.spec.js`.
 
 
