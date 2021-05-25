@@ -1,25 +1,31 @@
----------------------------> Project Jest <--------------------------------
-------------------------> Lista de requisitos <----------------------------
----------------------------------------------------------------------------
+--------------------------> Project Jest <-------------------------------
+-----------------------> Lista de requisitos <---------------------------
+-------------------------------------------------------------------------
 
 1 - Crie testes para uma função assíncrona
 Complete os testes do arquivo test/asyncJest.spec.js para que funcionem com código assíncrono.
 
-R: Tentei utilizar resolves e rejects que rodou no local mas, apresentou um erro de falta do catch no evaluetor. Provavelmente foi um falso positivo em local, acusado no remoto. Refatorei o test jest para atender uma promise e no resolves (quando o parâmetro de answerPhone for true), incluí a quantidade de asserções passando expect assertions(1); retornei a promise com parâmetro true, que cai no resolves (quando a promise é buscada com êxito), a promise precisa ser retornda dentro do teste jest e o then() pega o seu resultado (answer); agora sim, o texte é lançado com expect passando como parâmetro o retorno da promisse em answer e utilizando o matcher toBe para setar o resultado esperado!
-No segunfo test, reject é lançada e espera um resultado false; o teste retorna a promise passando false no parâmetro e retorna um error passado como prâmetro no catch; em seguida é chamado o test com expect, passando como parâmetro o retorno da promise em error e utilizando o matcher toEqual que vai receber o resultado esperado, que no caso é um new Error com uma mensagem!
+R: Tentei utilizar resolves e rejects que rodou no local mas, apresentou um erro de falta do catch no evaluetor. Provavelmente foi um falso positivo em local, acusado no remoto. Refatorei o test jest para atender uma promise e no resolves (quando o parâmetro de answerPhone for true), incluí a quantidade de asserções passando expect assertions(1); retornei a promise com parâmetro true, que cai no resolves (quando a promise é buscada com êxito), a promise precisa ser retornda dentro do teste jest e o then() pega o seu resultado (answer); agora sim, o teste é lançado com expect passando como parâmetro o retorno da promisse em answer e utilizando o matcher toBe para setar o resultado esperado!
+No segunfo test, reject é lançada e espera um resultado false; o teste retorna a promise passando false no parâmetro e retorna um error passado como parâmetro no catch; em seguida é chamado o test com expect, passando como parâmetro o retorno da promise em error e utilizando o matcher toEqual que vai receber o resultado esperado, que no caso é um new Error com uma mensagem!
 --> resolves: espera a promise ser resolvida. Caso a promise seja rejeitada, o teste automaticamente irá falhar.
 --> reject: espera a promise ser rejeitada. Caso a promise seja resolvida, o teste automaticamente irá falhar.
 --> toBe: testa igualdade estrita entre o valor passado para expect e seu argumento.
---> toEqual: testa igualdade estrita entre a referência passada para expect e seu argumento. Para testar igualdade de objetos e arrays, é preciso usar o matcher toEqual , que acessa cada elemento do objeto ou array, fazendo um trabalho de comparação específico e que retorna uma resposta mais voltada para a necessidade dos testes.
+--> toEqual: testa igualdade estrita entre a referência passada para expect e seu argumento. Para testar igualdade de objetos e arrays, é preciso usar o matcher toEqual, que acessa cada elemento do objeto ou array, fazendo um trabalho de comparação específico e que retorna uma resposta mais voltada para a necessidade dos testes.
+--> expect.assertions(numberOfTests): é um double check que serve para garantir que se caso esqueça de passar a promise num return no teste, ele mostre o erro! Garante que as asserctions sejam chamadas;
+--> expect.hasAsserctions(): Sem parâmetro, garante que pelo menos uma asserction seja chamada!
+--> Promises / Jest: não basta chamar a promise no test, para funcionar tem que passar o retorno da callback promise!
 
----------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 2 - Crie um "Mock" no arquivo test/mockFunctions.spec.js
 Crie mock functions no arquivo test/mockFunctions.spec.js para que os testes mockados 'sobrescrevam' o código definido na pasta src. A idéia é que as funções criadas a partir do Jest tenham prioridade na sua execução.
 
-R: 
+R: Requisito resolvido mockando as funções com jest.fn() e mockReturnValueOnce(); Chama-se no arquivo mockFunctions cada função que está com o comportamento errado e cada um deles recebe jest.fn(); depois passa mockReturnValueOnce para cada teste com cada valor esperado, simulndo assim o funcionamento dos testes;
+--> Mock: simula um resultado, dando controle sobre o funcionamento do testes;
+--> jest.fn(): O método jest.fn() configura-se como a forma mais simples de se mockar algo: ele transforma uma função em uma simulação. Ou seja: ao mockar uma função com o jest.fn() e fazer a chamada da mesma, o comportamento definido no mock será chamado, em vez da função original.
+--> mockReturnValueOnce(): retorna o valor definido apenas uma vez, e é importante, pois pode ser encadeado para que chamadas sucessivas retornem valores diferentes.
 
----------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 3 - Crie um Mock para o retorno da API
 Crie uma API mock no arquivo test/mockApi.spec.js para que os testes do Jest utilizem retornos de API fixos e independentes de requisições.
@@ -66,12 +72,12 @@ Exemplo de resposta da API randomuser.me:
 
 R: 
 
----------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 4 - Crie funções no arquivo test/setupTeardown.spec.js
 Intercale funções entre os testes definidos no arquivo test/setupTeardown.spec.js.
 
 R: Os testes já estavam prontos, eu apenas passei uma function beforeEach(), que tem uma callback que retorna a function randomAttack(), isso é necessário pois depois do primeiro ataque o array specialist fica defasado, gerando erro no teste subsequente;
---> beforeEach(): Executa uma função antes que cada um dos testes neste arquivo seja executado. Se a função retornar uma promessa ou for um gerador, Jest espera que a promessa seja resolvida antes de executar o teste.
+--> beforeEach(): Executa uma função antes que cada um dos testes neste arquivo seja executado. Se a função retornar uma promessa ou for um gerador, Jest espera que a promessa seja resolvida antes de executar o teste. Garante que trabalhemos com a mesma massa de dados inicial em todos os testes, resetando a massa de dados no início de cada teste, fazendo que alterações na massa de dados em um teste não altere o resultado do teste subsequente;
 
 ------------------------------< THE END >--------------------------------
