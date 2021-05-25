@@ -40,7 +40,7 @@ describe('verifica o usuário', () => {
       password: '1234567890',
     },
   }));
-  
+
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
