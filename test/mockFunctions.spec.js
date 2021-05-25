@@ -14,8 +14,6 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-const mockFunctions = require('../src/mockFunctions');
-
 jest.mock('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
