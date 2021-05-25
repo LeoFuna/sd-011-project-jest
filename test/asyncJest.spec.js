@@ -18,9 +18,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('Testa se linha atende ou está ocupada', () => {
   test('atende', () => {
-    expect(answerPhone(true)).resolves.toBe('Oi!');
+    return expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
+    return expect(answerPhone(false))
+      .rejects.toThrow(new Error('Infelizmente não podemos atender...'));
   });
 });
