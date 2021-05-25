@@ -24,16 +24,22 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
-
-  test('verifica se o usuário é o tunico', async () => (
-    api.fetchURL().then((user) => {
-      expect(user.gender).toEqual('male');
-      expect(user.name.first).toEqual('Antônio');
-      expect(user.name.last).toEqual('Britto');
-      expect(user.location.country).toEqual('Brazil');
-      expect(user.email).toEqual('tunico@bol.com.br');
-      expect(user.login.username).toEqual('tunicao123');
-      expect(user.login.password).toEqual('1234567890');
-    })
-  ));
+  const user2 = { gender: 'Masculino',
+    name: { first: 'Antônio', last: 'Britto' },
+    location: { country: 'Brasil' },
+    email: 'tunico@bol.com.br (Sim, é um email do bol mesmo...)',
+    login: { username: 'tunicao123', password: '1234567890 (Usem senhas fortes, crianças!)' },
+  };
+  test('verifica se o usuário é o tunico', () => {
+    api.fetchURL = jest.fn().mockImplementation(user2);
+    api.fetchURL = () => {
+      expect(this.gender).toBe('male');
+      expect(this.name.first).toBe('Antônio');
+      expect(this.name.last).toBe('Britto');
+      expect(this.location.country).toBe('Brazil');
+      expect(this.email).toBe('tunico@bol.com.br');
+      expect(this.login.username).toBe('tunicao123');
+      expect(this.login.password).toBe('1234567890');
+    };
+  });
 });
