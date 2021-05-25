@@ -25,8 +25,7 @@ https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockresolvedvaluevalue
 */
 
 describe('verifica o usuário', () => {
-  const mockFetch = api.fetchURL = jest.fn()
-  mockFetch.mockImplementation(() => Promise.resolve({
+  api.fetchURL = jest.fn().mockImplementation(() => Promise.resolve({
     gender: 'male',
     name: {
       first: 'Antônio',
