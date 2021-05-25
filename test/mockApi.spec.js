@@ -33,7 +33,6 @@ describe('verifica o usuário', () => {
    * função mockada, para algo de nosso interesse. */
   /** Para reforçar o entendimento, consultei a documentação do Jest.
    * Source: https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockresolvedvalueoncevalue */
-  
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
     name: {
