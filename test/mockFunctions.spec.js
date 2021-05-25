@@ -65,38 +65,38 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add(7, 26)).toBe(33);
   });
   test('testa função subtract', () => {
-    expect(mockFunctions.subtract(899, 35)).toBe(864);
-    expect(mockFunctions.subtract(-17, 333)).toBe(-350);
-    expect(mockFunctions.subtract(45, 97)).toBe(-52);
-    expect(mockFunctions.subtract(23, -108)).toBe(131);
-    expect(mockFunctions.subtract(-133, -29)).toBe(-104);
+    expect(mockFunctions.subtract(899, 35)).toEqual(864);
+    expect(mockFunctions.subtract(-17, 333)).toEqual(-350);
+    expect(mockFunctions.subtract(45, 97)).toEqual(-52);
+    expect(mockFunctions.subtract(23, -108)).toEqual(131);
+    expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
   });
   test('testa função multiply', () => {
-    expect(mockFunctions.multiply(1, 2)).toBe(2);
-    expect(mockFunctions.multiply(0, 5)).toBe(0);
-    expect(mockFunctions.multiply(-4, 9)).toBe(-36);
-    expect(mockFunctions.multiply(-12, -7)).toBe(84);
-    expect(mockFunctions.multiply(19, 23)).toBe(437);
+    expect(mockFunctions.multiply(1, 2)).toEqual(2);
+    expect(mockFunctions.multiply(0, 5)).toEqual(0);
+    expect(mockFunctions.multiply(-4, 9)).toEqual(-36);
+    expect(mockFunctions.multiply(-12, -7)).toEqual(84);
+    expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
   test('testa função divide', () => {
-    expect(mockFunctions.divide(169, 13)).toBe(13);
-    expect(mockFunctions.divide(-1900, 5)).toBe(-380);
-    expect(mockFunctions.divide(42, 7)).toBe(6);
-    expect(mockFunctions.divide(729, 243)).toBe(3);
-    expect(mockFunctions.divide(1331, 11)).toBe(121);
+    expect(mockFunctions.divide(169, 13)).toEqual(13);
+    expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
+    expect(mockFunctions.divide(42, 7)).toEqual(6);
+    expect(mockFunctions.divide(729, 243)).toEqual(3);
+    expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
   test('testa função power', () => {
-    expect(mockFunctions.power(10, 2)).toBe(100);
-    expect(mockFunctions.power(2, 10)).toBe(1024);
-    expect(mockFunctions.power(5, 5)).toBe(3125);
-    expect(mockFunctions.power(1, 10)).toBe(1);
-    expect(mockFunctions.power(0, 0)).toBe(1);
+    expect(mockFunctions.power(10, 2)).toEqual(100);
+    expect(mockFunctions.power(2, 10)).toEqual(1024);
+    expect(mockFunctions.power(5, 5)).toEqual(3125);
+    expect(mockFunctions.power(1, 10)).toEqual(1);
+    expect(mockFunctions.power(0, 0)).toEqual(1);
   });
   test('testa função factorial', () => {
-    expect(mockFunctions.factorial(5)).toBe(120);
-    expect(mockFunctions.factorial(10)).toBe(3628800);
-    expect(mockFunctions.factorial(3)).toBe(6);
-    expect(mockFunctions.factorial(8)).toBe(40320);
-    expect(mockFunctions.factorial(2)).toBe(2);
+    expect(mockFunctions.factorial(5)).toEqual(120);
+    expect(mockFunctions.factorial(10)).toEqual(3628800);
+    expect(mockFunctions.factorial(3)).toEqual(6);
+    expect(mockFunctions.factorial(8)).toEqual(40320);
+    expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
