@@ -17,11 +17,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // https://stackoverflow.com/questions/59747420/expect-a-function-to-throw-an-exception-in-jest
 
 describe('Testa se linha atende ou está ocupada', () => {
-  test('atende', () => {
-    return expect(answerPhone(true)).resolves.toBe('Oi!');
-  });
-  test('ocupado', () => {
-    return expect(answerPhone(false))
-      .rejects.toThrow(new Error('Infelizmente não podemos atender...'));
-  });
+  test('atende', () => expect(answerPhone(true)).resolves.toBe('Oi!'));
+  test('ocupado', () => expect(answerPhone(false))
+    .rejects.toThrow(new Error('Infelizmente não podemos atender...')));
 });
