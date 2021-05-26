@@ -15,6 +15,6 @@ describe('o retorno do telefonema', () => {
     expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    expect(answerPhone(false)).resolves.toThrow(new Error('Infelizmente não podemos atender...'));
+    expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
   });
 });
