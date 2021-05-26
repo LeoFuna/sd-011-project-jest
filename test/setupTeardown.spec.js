@@ -28,6 +28,11 @@ describe('quem sobreviveu?', () => {
     console.log(adventure.specialists);
   });
 
+  afterAll(() => {
+    const msg = `At the end of the adventure, only the ${adventure.specialists[0].classe} survived`;
+    console.log(msg);
+  });
+
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
@@ -42,7 +47,5 @@ describe('quem sobreviveu?', () => {
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
-    const msg = `Finally, only the ${adventure.specialists[0].classe} survived`;
-    console.log(msg);
   });
 });
