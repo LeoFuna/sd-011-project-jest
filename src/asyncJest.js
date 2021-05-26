@@ -6,4 +6,4 @@ const answerPhone = (answer) =>
     );
   });
 
-module.exports = answerPhonee;
+module.exports = answerPhone;
