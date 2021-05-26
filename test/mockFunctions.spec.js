@@ -15,8 +15,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-
   mockFunctions.multiply = jest.fn((a, b) => a * b);
   mockFunctions.power = jest.fn((a, b) => {
     if (a === 0) return 1;
