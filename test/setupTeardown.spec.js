@@ -21,6 +21,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 // References:
 // Setup and Teardown: https://jestjs.io/docs/setup-teardown
+// beforeEach Jest: https://stackoverflow.com/questions/57497799/what-is-the-purpose-of-beforeeach-global-in-jest
+// afterEach Jest: https://www.codota.com/code/javascript/functions/jest/afterEach
 
 describe('quem sobreviveu?', () => {
   beforeEach(() => {

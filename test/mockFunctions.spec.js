@@ -26,11 +26,17 @@ jest.mock('../src/mockFunctions');
 const factFunction = (n) => (n ? (n * factFunction(n - 1)) : 1);
 
 describe('verifica as funções e os mocks', () => {
+  // addition
   (mockFunctions.add).mockImplementation((a, b) => a + b);
+  // subtraction
   (mockFunctions.subtract).mockImplementation((a, b) => a - b);
+  // division
   (mockFunctions.divide).mockImplementation((a, b) => a / b);
+  // multiplication
   (mockFunctions.multiply).mockImplementation((a, b) => a * b);
+  // exponentiation
   (mockFunctions.power).mockImplementation((a, b) => a ** b);
+  // factorial
   (mockFunctions.factorial).mockImplementation((x) => factFunction(x));
 
   test('testa função add', () => {
