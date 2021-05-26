@@ -16,7 +16,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // https://www.youtube.com/watch?v=sLx00kXPoTg
 // https://stackoverflow.com/questions/59747420/expect-a-function-to-throw-an-exception-in-jest
 
-describe('Testa se linha atende ou está ocupada', () => {
+describe('o retorno do telefonema', () => {
   test('atende', () => expect(answerPhone(true)).resolves.toBe('Oi!'));
 
   test('ocupado', () => expect(answerPhone(false))
