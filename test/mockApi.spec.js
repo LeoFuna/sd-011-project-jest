@@ -47,4 +47,3 @@ describe('verifica o usuário', () => {
     })
   ));
 });
-
