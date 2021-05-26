@@ -15,16 +15,18 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    return answerPhone(true).then((msg) => {
-      expect(msg).toBe('Oi!');
-    });
+    // return answerPhone(true).then((msg) => {
+    //   expect(msg).toBe('Oi!');
+    // });
+    return expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    return answerPhone(false).catch((err) => {
-      expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
-    });
+    // return answerPhone(false).catch((err) => {
+    //   expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
+    // });
+    return expect(answerPhone(false)).rejects.toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
