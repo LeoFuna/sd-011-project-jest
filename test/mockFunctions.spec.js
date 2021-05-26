@@ -21,6 +21,7 @@ jest.mock('../src/mockFunctions');
 // Factorial Function in JS: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
 // Recursive Function definition: https://techterms.com/definition/recursive_function
 // Ternaty Conditional Chains: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator#conditional_chains
+// Avoid Nested Ternary: https://stackoverflow.com/questions/38410030/avoid-nested-ternary
 
 const factFunction = (n) => (n ? (n * factFunction(n - 1)) : 1);
 
