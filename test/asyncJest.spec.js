@@ -14,5 +14,5 @@ describe('o retorno do telefonema', () => {
   });
   test('ocupado', async () => {
     await expect(answerPhone(false)).rejects.toThrowError('Infelizmente não podemos atender...');
-  });
+  }); // /^Infelizmente não podemos atender...$/ regex...
 });
