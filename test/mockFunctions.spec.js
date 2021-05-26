@@ -14,8 +14,23 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockFunctions');
+
+// Reference:
+// mockImplementation: https://jestjs.io/docs/mock-function-api#mockfnmockimplementationfn
+// Factorial Function in JS: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+// Recursive Function definition: https://techterms.com/definition/recursive_function
+// Ternaty Conditional Chains: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator#conditional_chains
+
+const factFunction = n => (n < 0) ? -1 : (n === 0) ? 1 : (n * factFunction(n - 1));
+
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  (mockFunctions.add).mockImplementation((a, b) => a + b);
+  (mockFunctions.subtract).mockImplementation((a, b) => a - b);
+  (mockFunctions.divide).mockImplementation((a, b) => a / b);
+  (mockFunctions.multiply).mockImplementation((a, b) => a * b);
+  (mockFunctions.power).mockImplementation((a, b) => a ** b);
+  (mockFunctions.factorial).mockImplementation((x) => factFunction(x));
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
