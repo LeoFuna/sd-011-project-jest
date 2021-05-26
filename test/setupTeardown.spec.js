@@ -28,7 +28,7 @@ describe('quem sobreviveu?', () => {
   });
 
   afterEach(() => {
-    console.log(adventure.specialists.forEach((specialist) => specialist.nome));
+    console.log(adventure.specialists.forEach((items) => items.nome));
   });
 
   test('depois da primeira aventura', () => {
