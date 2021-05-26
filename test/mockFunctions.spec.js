@@ -22,7 +22,7 @@ jest.mock('../src/mockFunctions');
 // Recursive Function definition: https://techterms.com/definition/recursive_function
 // Ternaty Conditional Chains: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator#conditional_chains
 
-const factFunction = n => (n < 0) ? -1 : (n === 0) ? 1 : (n * factFunction(n - 1));
+const factFunction = (n) => (n === 0) ? 1 : (n * factFunction(n - 1));
 
 describe('verifica as funções e os mocks', () => {
   (mockFunctions.add).mockImplementation((a, b) => a + b);
