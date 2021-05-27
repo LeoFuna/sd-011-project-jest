@@ -1,6 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
-//jest.mock('../src/mockFunctions');
+// jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -17,7 +17,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
-  
+
   test('testa função add', () => {
     /* mockFunctions.add = jest.fn()
       .mockReturnValueOnce(3)
@@ -26,7 +26,7 @@ describe('verifica as funções e os mocks', () => {
       .mockReturnValueOnce(-175)
       .mockReturnValueOnce(33); */
     mockFunctions.add = jest.fn()
-     .mockImplementation((a, b) => a + b);
+      .mockImplementation((a, b) => a + b);
 
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
@@ -67,9 +67,8 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
   test('testa função divide', () => {
-
     mockFunctions.divide = jest.fn()
-      .mockImplementation((a, b) => a / b); 
+      .mockImplementation((a, b) => a / b);
 
     expect(mockFunctions.divide(169, 13)).toEqual(13);
     expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
@@ -79,7 +78,7 @@ describe('verifica as funções e os mocks', () => {
   });
   test('testa função power', () => {
     mockFunctions.power = jest.fn()
-      .mockImplementation((a, b) => a ** b );
+      .mockImplementation((a, b) => a ** b);
 
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
@@ -90,12 +89,12 @@ describe('verifica as funções e os mocks', () => {
   test('testa função factorial', () => {
     mockFunctions.factorial = jest.fn()
       .mockImplementation((a) => {
-        let fator = a ;
-        for (let index = fator - 1; index > 0 ; index -= 1) {
+        let fator = a;
+        for (let index = fator - 1; index > 0; index -= 1) {
           fator = fator * index;
         }
         return fator;
-      })
+      });
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial(3)).toEqual(6);
