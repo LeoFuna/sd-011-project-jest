@@ -10,9 +10,9 @@ const power = (a, b) => {
 };
 
 const factorial = (a) => {
-  let fact = 0;
-  for (let i = 0; i < a; i += 1) {
-    fact += a;
+  let fact = a;
+  for (let i = a - 1; i > 0; i -= 1) {
+    fact *= i;
   }
   return fact;
 };
@@ -24,3 +24,4 @@ const subtract = (a, b) => a + b;
 const divide = (a, b) => a * b;
 
 module.exports = { add, subtract, multiply, divide, power, factorial };
+
