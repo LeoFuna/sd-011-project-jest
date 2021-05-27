@@ -24,9 +24,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
-
-  test('verifica se o usuário é o tunico', async () => (
-    api.fetchURL().then((user) => {
+  const user = {
+    gender: 'male',
+    name: { first: 'Ântonio', last: 'Britto' },
+    location: { country: 'Brasil' },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+  api.fetchURL = jest.fn().mockImplementation(user);
+  test('verifica se o usuário é o tunico', async () => {
+    api.fetchURL = () => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
@@ -34,6 +44,6 @@ describe('verifica o usuário', () => {
       expect(user.email).toEqual('tunico@bol.com.br');
       expect(user.login.username).toEqual('tunicao123');
       expect(user.login.password).toEqual('1234567890');
-    })
-  ));
+    };
+  });
 });
