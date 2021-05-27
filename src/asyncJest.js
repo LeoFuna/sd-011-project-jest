@@ -7,5 +7,3 @@ const answerPhone = (answer) =>
   });
 
 module.exports = answerPhone;
-
-// commit inicial
