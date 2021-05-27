@@ -42,7 +42,7 @@ Nesse projeto, você será capaz de:
 - "Mockar" APIs;
 
 ---
-
+iniciando
 # Entregáveis
 
 ## O que deverá ser desenvolvido
@@ -55,11 +55,11 @@ Neste projeto, você irá implementar testes utilizando o **Jest** para verifica
 
 Este repositório contém a estrutura de pastas e arquivos que contém funções que deverão ser testadas por você. Após clonar o projeto e criar sua branch de trabalho, você poderá começar o desenvolvimento dos testes.
 
-Lembre-se de **não modificar** os arquivos da pasta `src`, o objetivo do projeto é que você trabalhe apenas com a pasta `test`. 
+Lembre-se de **não modificar** os arquivos da pasta `src`, o objetivo do projeto é que você trabalhe apenas com a pasta `test`.
 
 Para testar se os requisitos estão passando, você pode executar os testes na sua máquina com o comando `npm test nome-arquivo.test`. É muito importante que você **não modifique nenhum arquivo da pasta src**. Alterá-los pode fazer com que o seu requisito não passe no avaliador automático.
 
-Em cada `describe` existe uma função `assert.fail()` para que o avalidor teste o seu código corretamente **comente** ou **retire** essa função. 
+Em cada `describe` existe uma função `assert.fail()` para que o avalidor teste o seu código corretamente **comente** ou **retire** essa função.
 
 Lembre-se também de **não modificar** os describes dos tests na pasta `test`. Alterá-los pode fazer com que o seu requisito não passe no avaliador automático.
 
@@ -134,7 +134,7 @@ Lembre-se também de **não modificar** os describes dos tests na pasta `test`. 
 
 ## Linter
 
-Para garantir a qualidade do código, vamos utilizar neste projeto o  [ESLint](https://eslint.org/). Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! 
+Para garantir a qualidade do código, vamos utilizar neste projeto o  [ESLint](https://eslint.org/). Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção!
 
 Este projeto já vem com as dependências relacionadas ao _linter_ configuradas no arquivo `package.json`.
 
