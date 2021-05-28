@@ -21,6 +21,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  // print specialists array before each test
+  beforeEach(() => console.log(adventure.specialists));
   // before each test...
   beforeEach(() => adventure.randomAttack());
 
@@ -38,5 +40,8 @@ describe('quem sobreviveu?', () => {
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
+    // 
+    console.log(`You did well, ${adventure.specialists[0].nome}`);
   });
+  // console.log(`You did well, ${adventure.specialists[0].nome}`);
 });
