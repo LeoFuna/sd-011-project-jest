@@ -40,7 +40,7 @@ describe('quem sobreviveu?', () => {
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
-    // 
+    // get the last survivor
     console.log(`You did well, ${adventure.specialists[0].nome}`);
   });
   // console.log(`You did well, ${adventure.specialists[0].nome}`);
