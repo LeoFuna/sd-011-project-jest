@@ -1,5 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
-
+jest.mock('../src/mockFunctions'); // jest.fn(), functions already mocked
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
