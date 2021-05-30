@@ -11,7 +11,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    expect(answerPhone(true)).resolves.toBe('Alô!');
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
     expect(answerPhone(false)).rejects.toThrow('...');
