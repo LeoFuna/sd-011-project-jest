@@ -15,7 +15,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  beforeEach(() => {
+    mockFunctions.add = (a, b) => a + b;
+    mockFunctions.subtract = (a, b) => a - b;
+    mockFunctions.divide = (a, b) => a / b;
+    mockFunctions.multiply = (a, b) => a * b;
+    mockFunctions.power = (a, b) => a ** b;
+    mockFunctions.factorial = (a) => {
+      let fact = 1;
+      for (let i = 1; i <= a; i += 1) {
+        fact *= i;
+      }
+      return fact;
+    };
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
