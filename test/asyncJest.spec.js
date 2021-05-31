@@ -10,14 +10,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', async () => {
-    expect.hasAssertions();
-    await expect(answerPhone(true)).toEqual('oi');
+  it('atende', async () => {
+    expect.assertions(1);
+    await expect(answerPhone(true)).resolves.toBe('Oi!');
     // Insira seu teste assíncrono aqui
   });
 
-  test('ocupado', async () => {
-    expect.hasAssertions();
+  it('ocupado', async () => {
+    expect.assertions(1);
     await expect(answerPhone(false)).rejects.toThrowError('Infelizmente não podemos atender...');
     // Insira seu teste assíncrono aqui
   });
