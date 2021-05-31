@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -60,7 +61,7 @@ describe('verifica as funções e os mocks', () => {
   test('testa função factorial', () => {
     mockFunctions.factorial.mockImplementation((number) => {
       let count = 1;
-      for (let index = 0; index < number; index += 1) {
+      for (let index = 1; index <= number; index += 1) {
         count *= index;
       }
       return count;
