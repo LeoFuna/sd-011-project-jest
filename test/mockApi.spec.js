@@ -25,7 +25,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
   const fetchURL = jest
-    .spyOn()
+    .spyOn(api, 'fetchURL')
     .mockResolvedValue({
       gender: 'male',
       name: {
