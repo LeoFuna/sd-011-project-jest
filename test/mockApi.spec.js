@@ -26,8 +26,8 @@ describe('verifica o usuário', () => {
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
     name: {
-      first:'Antônio',
-      last: 'Britto'
+      first: 'Antônio',
+      last: 'Britto',
     },
     location: {
       country: 'Brazil',
