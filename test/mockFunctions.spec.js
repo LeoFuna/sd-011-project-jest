@@ -12,6 +12,7 @@ Importante! A correção de código via mock functions não é uma aplicação u
 O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
+source de factorial link https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
 */
 
 describe('verifica as funções e os mocks', () => {
