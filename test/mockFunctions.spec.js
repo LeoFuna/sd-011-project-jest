@@ -7,14 +7,14 @@ Crie mock functions para cada uma das operações de modo que os cálculos sejam
 não como estão sendo feitos no arquivo original.
 A idéia é que os novos testes sobrescrevam os testes
 importados apenas na suite de testes abaixo.
-
 Importante! A correção de código via mock functions não é uma aplicação usual.
 O foco aqui é a utilização de mock functions.
-
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-const calc = (n) => (n === 0 ? 1 : n * calc(n - 1));
+// referência - https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockimplementationfn
+// referência - Hector, discussão sobre funções de fatoração - https://gist.github.com/macsousa/dccd2abb2c68c5958846824e975482d3
+const fac = (n) => (n === 0 ? 1 : n * fac(n - 1));
 
 describe('verifica as funções e os mocks', () => {
   jest.mock('../src/mockFunctions');
@@ -29,7 +29,7 @@ describe('verifica as funções e os mocks', () => {
 
   mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
 
-  mockFunctions.factorial = jest.fn().mockImplementation(calc);
+  mockFunctions.factorial = jest.fn().mockImplementation(fac);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
