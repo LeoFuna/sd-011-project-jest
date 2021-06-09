@@ -1,4 +1,3 @@
-const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -12,11 +11,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(false)).rejects.toThrow(new Error('Infelizmente não podemos atender...'));
   });
 });
+
+// Source: consulta ao repositório do colega Matheus Gaspar: https://github.com/tryber/sd-011-project-jest/pull/112/
