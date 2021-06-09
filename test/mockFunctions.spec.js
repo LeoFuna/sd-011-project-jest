@@ -1,22 +1,16 @@
 const mockFunctions = require('../src/mockFunctions');
 
-/*
-Criamos uma série de funções com eficiência duvidosa.
-Elas estão no arquivo 'src/mockFunctions.js'.
-Crie mock functions para cada uma das operações de modo que os cálculos sejam feitos corretamente,
-não como estão sendo feitos no arquivo original.
-A idéia é que os novos testes sobrescrevam os testes
-importados apenas na suite de testes abaixo.
-
-Importante! A correção de código via mock functions não é uma aplicação usual.
-O foco aqui é a utilização de mock functions.
-
-ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
-*/
-
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  
+
+  jest.spyOn(mockFunctions, 'add').mockImplementation((a, b) => a + b);
+  jest.spyOn(mockFunctions, 'subtract').mockImplementation((a, b) => a - b);
+  jest.spyOn(mockFunctions, 'multiply').mockImplementation((a, b) => a * b);
+  jest.spyOn(mockFunctions, 'divide').mockImplementation((a, b) => a / b);
+  jest.spyOn(mockFunctions, 'power').mockImplementation((a, b) => Math.pow(a, b));
+  jest.spyOn(mockFunctions, 'factorial').mockImplementation(function factorial(a) {
+    return (a > 1) ? a * factorial(a - 1) : 1
+  });
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
