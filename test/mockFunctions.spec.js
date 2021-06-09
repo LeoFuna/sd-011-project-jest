@@ -6,9 +6,9 @@ describe('verifica as funções e os mocks', () => {
   jest.spyOn(mockFunctions, 'subtract').mockImplementation((a, b) => a - b);
   jest.spyOn(mockFunctions, 'multiply').mockImplementation((a, b) => a * b);
   jest.spyOn(mockFunctions, 'divide').mockImplementation((a, b) => a / b);
-  jest.spyOn(mockFunctions, 'power').mockImplementation((a, b) => Math.pow(a, b));
+  jest.spyOn(mockFunctions, 'power').mockImplementation((a, b) => (a ** b));
   jest.spyOn(mockFunctions, 'factorial').mockImplementation(function factorial(a) {
-    return (a > 1) ? a * factorial(a - 1) : 1
+    return (a > 1) ? a * factorial(a - 1) : 1;
   });
 
   test('testa função add', () => {

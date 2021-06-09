@@ -1,24 +1,22 @@
 const api = require('../src/mockApi');
 
-
 describe('verifica o usuário', () => {
   const admin = {
-    gender:'male',
-    name:{
-      first:'Antônio',
-      last:'Britto'
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
     },
-    location:{
-      country:'Brazil'
+    location: {
+      country: 'Brazil',
     },
-    email:'tunico@bol.com.br',
-    login :{
-      username : 'tunicao123',
-      password: '1234567890'
-    }
-  }
-  jest.spyOn(api,'fetchURL').mockResolvedValue(admin)
-
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+  jest.spyOn(api, 'fetchURL').mockResolvedValue(admin)
 
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
@@ -32,4 +30,3 @@ describe('verifica o usuário', () => {
     });
   });
 }); 
-
