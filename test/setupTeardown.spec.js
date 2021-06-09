@@ -21,6 +21,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  afterEach(() => {
+    const message = adventure.specialists.length > 1
+      ? 'The survivors are ' : 'The only survivor is ';
+    const survivors = adventure.specialists.map(({ nome, classe }) => (
+      `${nome}, the ${classe}`)).join('; ');
+    console.log(message + survivors);
+  });
+
+  // Source: consulta ao repositório do Matheus Gaspar: https://github.com/tryber/sd-011-project-jest/pull/112/
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
