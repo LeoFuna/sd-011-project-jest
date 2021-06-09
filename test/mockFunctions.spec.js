@@ -30,6 +30,8 @@ describe('verifica as funções e os mocks', () => {
     return factorial;
   });
 
+  // Source: consulta ao repositório do Matheus Gaspar: https://github.com/tryber/sd-011-project-jest/pull/112/
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
