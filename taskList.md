@@ -1,0 +1,4 @@
+- [x] Teste para função assíncrona
+- [x] "Mock" no arquivo test/mockFunctions.spec.js
+- [x] "Mock" para o retorno da API
+- [x] Crie funções no arquivo test/setupTeardown.spec.js
