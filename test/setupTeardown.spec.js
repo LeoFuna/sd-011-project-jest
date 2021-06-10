@@ -23,10 +23,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   beforeEach(() => {
-    console.log(adventure.specialists.map(({classe}) => classe))
+    console.log(adventure.specialists.map(({ classe }) => classe));
     adventure.randomAttack();
   });
-   test('depois da primeira aventura', () => {
+  test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
