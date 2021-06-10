@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+
 jest.mock('../src/mockFunctions');
 
 /*
@@ -16,10 +17,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  
-  mockFunctions.add.mockImplementation((a, b) => {
-    return a + b
-  });
+  mockFunctions.add.mockImplementation((a, b) => a + b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -65,24 +63,16 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
     expect(mockFunctions.power(5, 5)).toEqual(3125);
-    expect(mockFunctions.power(1, 10)).toEqual(1); //potencia de 1
-    expect(mockFunctions.power(0, 0)).toEqual(1); // potencia de 0
+    expect(mockFunctions.power(1, 10)).toEqual(1);
+    expect(mockFunctions.power(0, 0)).toEqual(1);
   });
 
-  // let resultfator = 1
-  //     for (let index = fator - 1; index >= 1; index -= 1) {
-  //     let resultfator = fator   
-  //     resultfator = resultfator * index
-  //   }
-  //   return resultfator
-  // };
-
   mockFunctions.factorial.mockImplementation((a) => {
-    let resultfator = a   
+    let resultfator = a;
     for (let index = a - 1; index >= 1; index -= 1) {
-      resultfator = resultfator * index
+      resultfator *= index;
     }
-    return resultfator
+    return resultfator;
   });
 
   test('testa função factorial', () => {
