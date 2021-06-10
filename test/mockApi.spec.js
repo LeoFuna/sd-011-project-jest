@@ -16,10 +16,10 @@ describe('verifica o usuário', () => {
       password: '1234567890',
     },
   };
-  jest.spyOn(api, 'fetchURL').mockResolvedValue(admin)
+  jest.spyOn(api, 'fetchURL').mockResolvedValue(admin);
 
   test('verifica se o usuário é o tunico', async () => {
-    return api.fetchURL().then((user) => {
+    api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
@@ -29,4 +29,4 @@ describe('verifica o usuário', () => {
       expect(user.login.password).toEqual('1234567890');
     });
   });
-}); 
+});

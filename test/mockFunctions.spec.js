@@ -1,7 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
-
   jest.spyOn(mockFunctions, 'add').mockImplementation((a, b) => a + b);
   jest.spyOn(mockFunctions, 'subtract').mockImplementation((a, b) => a - b);
   jest.spyOn(mockFunctions, 'multiply').mockImplementation((a, b) => a * b);
