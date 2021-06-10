@@ -19,10 +19,14 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+// https://jestjs.io/docs/25.x/setup-teardown   <-  resolve tudo
 
-  test('depois da primeira aventura', () => {
+describe('quem sobreviveu?', () => {
+  beforeEach(() => {
+    console.log(adventure.specialists.map(({classe}) => classe))
+    adventure.randomAttack();
+  });
+   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
