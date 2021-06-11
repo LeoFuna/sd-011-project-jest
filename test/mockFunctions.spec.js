@@ -7,15 +7,26 @@ Crie mock functions para cada uma das operações de modo que os cálculos sejam
 não como estão sendo feitos no arquivo original.
 A idéia é que os novos testes sobrescrevam os testes
 importados apenas na suite de testes abaixo.
-
 Importante! A correção de código via mock functions não é uma aplicação usual.
 O foco aqui é a utilização de mock functions.
-
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  beforeEach(() => {
+    mockFunctions.add = (a, b) => a + b;
+    mockFunctions.subtract = (a, b) => a - b;
+    mockFunctions.divide = (a, b) => a / b;
+    mockFunctions.multiply = (a, b) => a * b;
+    mockFunctions.power = (a, b) => a ** b;
+    mockFunctions.factorial = (a) => {
+      let fact = 1;
+      for (let i = 1; i <= a; i += 1) {
+        fact *= i;
+      }
+      return fact;
+    };
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
