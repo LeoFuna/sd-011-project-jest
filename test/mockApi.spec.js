@@ -17,13 +17,27 @@ independa de chamadas de API e retorne as seguintes informações do Tunico:
 Note que as informações devem estar de acordo com o JSON
 presente no README.md do projeto.
 
-Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
+Dica: Utilizem os métodos jest.fn() ou jest.spyOn(). [https://jestjs.io/pt-BR/docs/mock-function-api]
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  api.fetchURL = jest.fn().mockResolvedValue({
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  });
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
