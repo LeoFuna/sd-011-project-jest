@@ -1,4 +1,5 @@
 const answerPhone = require('../src/asyncJest');
+
 /*
 A função answerPhone recebe um parâmetro boleano.
 Dependendo do parâmetro o retorno da função varia, veja a função no arquivo 'src/asyncJest.js'
@@ -10,13 +11,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', async () => {
-    const atendido = await answerPhone(true);
-    expect(atendido).toEqual('Oi!');
-  });
-  test('ocupado', () => {
-    answerPhone(false).catch((naoAtendido) => {
-      expect(naoAtendido).toEqual(Error('Infelizmente não podemos atender...'));
-    });
-  });
+  test('atende', async () => expect(await answerPhone(true)).toEqual('Oi!'));
+  test('ocupado', () => answerPhone(false).catch((notAnswered) =>
+    expect(notAnswered).toEqual(Error('Infelizmente não podemos atender...'))));
 });
