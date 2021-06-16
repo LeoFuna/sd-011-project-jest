@@ -1,3 +1,5 @@
+## OBS: PROJETO DESENVILVIDO NA TRYBE ONDE TESTEI CONHECIMENTOS EM TESTES COM JEST
+
 ## Termos de acordos
 
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
